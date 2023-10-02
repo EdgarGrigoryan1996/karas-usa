@@ -1,0 +1,669 @@
+.stop-scrolling{
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
+    -ms-touch-action: none;
+}
+.mr-2{
+    margin-right: 2px;
+}
+.translateImg{
+    transform: scale(120%) translate(0,-15%);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+ }
+
+.image-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color:#F4E7D4;
+    padding-bottom: 5px;
+}
+.categoryes-wrapper{
+	padding: 0 30px;
+}
+
+/*Popup Start*/
+.popup{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+}
+
+.popup-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.popup-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 80%;
+    height: 50%;
+    border-radius: 8px;
+    gap:15px;
+}
+
+.popup-text{
+    color:#fff;
+    font-size: 20px;
+}
+
+.popup-lang{
+    padding: 15px 45px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid #fff;
+    color:#fff;
+    transition: all 0.2s linear;
+}
+.popup-lang:hover{
+    background-color: whitesmoke;
+    color: #333;
+}
+
+.disablePopup{
+    display: none;
+}
+
+.showPopupButton{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: .4rem;
+    font-size: .875rem;
+    line-height: 2rem;
+    padding: .25rem .50rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+/*End Popup*/
+
+.menu-block{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url("../assets/images/logoBackground/background-min.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    margin-bottom: 65px;
+}
+.change-lang{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.menu-background-logo {
+    width: 100%;
+    height: 100%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.logo{
+    text-align: right;
+}
+.logo img{
+    width: 35%;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 10px 0;
+    text-align: center;
+    font-weight: 700;
+    color: #312F31;
+    letter-spacing: 3px;
+}
+
+.family-combos .combo-group .section-title{
+    padding: 20px 0;
+}
+
+.section-title h2{
+    background: #FDBE10;
+    border-radius: 56px;
+    padding: 5px 25px 5px 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.red-title h2{
+	background: #F72929;
+	color: #fff;
+}
+
+.small-title {
+    font-size: 14px;
+}
+
+section{
+	padding: 25px 5px 50px 5px;
+    background-image: url("../assets/images/categoryBackground.png");
+    background-repeat: no-repeat;
+    background-color: #312F31;
+    margin-bottom: 60px;
+    border-radius: 15px;
+    position: relative;
+}
+
+section:after{
+	content:"";
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: calc(100% + 20px);
+	height: calc(100% + 20px);
+	border-radius: 15px;
+	border: 2px dashed #312F31;
+}
+
+.category-block{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dish{
+    margin: 15px 0 0 0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 21px 21px 53px rgba(150, 150, 154, 0.15);
+    position: relative;
+    flex-basis: 29%;
+    display: flex;
+    flex-direction: column;
+}
+
+.combo-group .dish{
+    margin-top: 0;
+    width: calc(100% - 23px);
+}
+
+.dish-image-background {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 13vw;
+    border-radius: 7px;
+}
+.family-combos .dish-image-background{
+    height: unset;
+}
+.family-combos .dish-image-background img{
+    position: static;
+    left: unset;
+    bottom: unset;
+    transform: translate(0);
+}
+.family-combos .dish{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.dish-image-background img {
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    width: calc(100% - 6px);
+}
+
+
+
+.dish-title{
+    font-weight: 700;
+    font-size: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: break-spaces;
+    color: #312F31;
+}
+
+.dish-price{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5px;
+    font-weight: 700;
+    padding-top: 1px;
+    position: absolute;
+    bottom: 5px;
+    right: -8px;
+    border-radius: 50%;
+    background: #F72929;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+.dish-info {
+    padding: 1px 9px 3px 9px;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    justify-content: center;
+}
+
+.family-combos .dish-price{
+    font-size: 12px;
+    width: 43px;
+    height: 43px;
+}
+.combo-products-list{
+    font-size: 6px;
+    color: #312F31;
+}
+ .dish-image-background img.big{
+	width: calc(50%);
+}
+.dish-image-background img.medium{
+    width: calc(80%);
+}
+.dish-image-background img.small{
+    width: calc(77%);
+}
+.beverages .dish-image-background img{
+	left: 50%;
+	transform: translate(-50%);
+    width: 45%;
+}
+ .dish-image-background img.shadow{
+	left: 55%;
+	transform: translate(-50%);
+}
+.dish-image-background img.center-60{
+    left:60%
+}
+.dish-image-background img.center-62{
+    left:62%
+}
+.dish-image-background img.center-59{
+    left:59%
+}
+.dish-image-background img.center-58{
+    left: 58%;
+}
+.dish-image-background img.center-57{
+    left: 57%;
+}
+.dish-image-background img.center-56{
+    left: 56%;
+}
+.dish-image-background img.center-55-5{
+    left:55.001%
+}
+.dish-image-background img.center-53{
+    left:53%
+}
+.dish-image-background img.center-52{
+    left:52%
+}
+.dish-image-background img.center-51{
+    left:51%
+}
+.dish-image-background img.center-11{
+    left:11%
+}
+
+
+
+/*Combo products*/
+
+.combo-products-list{
+    display: flex;
+    gap: 8%;
+    padding: 10px;
+}
+.combo-products-list li{
+    list-style-type: none;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 360px){
+    .text-center{
+        text-align: center;
+    }
+    section{
+        padding: 25px 10px 50px 10px;
+    }
+    .section-title{
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    .family-combos .dish-price{
+        font-size: 10px;
+        width: 37px;
+        height: 37px;
+    }
+    .combo-products-list{
+        font-size: 6px;
+    }
+
+    .dish-image-background img {
+        left: 8px;
+        width: calc(100% - 16px);
+    }
+
+    .dish{
+        margin: 20px 0 0 0;
+        flex-basis: 29%;
+        border-radius: 8px;
+    }
+
+    .dish-title{
+        font-size: 6px;
+        font-weight: 700;
+    }
+    .dish-price{
+        right: -11px;
+        font-size: 6px;
+        width: 20px;
+        height: 20px;
+    }
+    .dish-info{
+        padding: 1px 10px 5px 10px;
+    }
+    .beverages .dish-image-background img{
+        width: 45%;
+    }
+	
+}
+@media screen and (min-width: 475px){
+    .text-center{
+        text-align: center;
+    }
+    .logo img{
+        width: 40%;
+    }
+	section{
+		padding: 25px 10px 50px 10px;
+        border-radius: 25px;
+}
+    section:after{
+        border-radius: 25px;
+    }
+	.categoryes-wrapper{
+		padding: 0 30px;
+	}
+    .family-combos .combo-group .section-title{
+        padding: 30px 0;
+    }
+    .section-title h2{
+        font-size: 16px;
+    }
+    .dish{
+        margin: 35px 0 0 0;
+        flex-basis: 29%;
+        border-radius: 8px;
+    }
+
+    .dish-title{
+        font-size: 8px;
+        font-weight: 700;
+    }
+    .dish-price{
+        right: -14px;
+        font-size: 8px;
+        width: 25px;
+        height: 25px;
+    }
+    .dish-info{
+        padding: 3px 12px 6px 12px;
+    }
+    .family-combos .dish-price{
+        font-size: 16px;
+        width: 55px;
+        height: 55px;
+    }
+    .combo-products-list{
+        font-size: 10px;
+    }
+    .beverages .dish-image-background img{
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 575px){
+    .text-center{
+        text-align: center;
+    }
+    .logo img{
+        width: 50%;
+    }
+
+    section{
+        padding: 25px 10px 100px 10px;
+        border-radius: 30px;
+    }
+    section:after{
+        border-radius: 30px;
+    }
+    .categoryes-wrapper{
+        padding: 0 30px;
+    }
+    .section-title{
+        padding: 12px 0 14px 0;
+
+    }
+    .section-title h2{
+        font-size: 20px;
+    }
+    .family-combos .combo-group .section-title{
+        padding: 40px 0;
+    }
+
+    .dish{
+        margin: 40px 0 0 0;
+        flex-basis: 29%;
+        border-radius: 18px;
+    }
+
+    .dish-title{
+        font-size: 11px;
+        font-weight: 700;
+    }
+    .dish-price{
+        right: -17px;
+        font-size: 11px;
+        width: 34px;
+        height: 34px;
+    }
+    .dish-info{
+        padding: 3px 18px 7px 18px;
+    }
+    .family-combos .dish-price{
+        font-size: 17px;
+        width: 60px;
+        height: 60px;
+    }
+    .combo-products-list{
+        font-size: 11px;
+    }
+    .beverages .dish-image-background img{
+        width: 45%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .text-center{
+        text-align: center;
+    }
+    section{
+        padding: 40px 20px 100px 10px;
+        border-radius: 35px;
+    }
+    section:after{
+        border-radius: 35px;
+    }
+
+    .menu-block {
+        height: 450px;
+    }
+
+    .logo img {
+        width: 60%;
+
+    }
+    .section-title h2{
+        font-size: 36px;
+    }
+
+    .dish{
+        margin: 40px 0 0 0;
+        flex-basis: 29%;
+        border-radius: 18px;
+    }
+
+    .dish-title{
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .dish-price{
+        right: -25px;
+        font-size: 15px;
+        width: 46px;
+        height: 46px;
+    }
+    .dish-info{
+        padding: 0px 20px 8px 20px;
+    }
+
+    .family-combos .dish-price{
+        font-size: 24px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .combo-products-list{
+        font-size: 14px;
+    }
+
+    .dish-image-background {
+        height: 150px;
+        border-radius: 20px;
+    }
+
+    .dish-image-background img {
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 10px;
+        width: 85%;
+    }
+    .beverages .dish-image-background img{
+        width: 45%;
+    }
+}
+@media screen and (min-width: 1024px ){
+
+	.text-left{
+        text-align: left;
+    }
+
+    section{
+        padding: 40px 20px 100px 20px;
+        border-radius: 44px;
+    }
+    section:after{
+        border-radius: 44px;
+    }
+
+    .menu-block {
+        height: 635px;
+    }
+
+    .logo img {
+        width: unset;
+        height: unset;
+    }
+
+    .section-title h2{
+        font-size: 42px;
+    }
+
+    .dish{
+        margin: 40px 0 0 0;
+        flex-basis: 29%;
+        border-radius: 18px;
+    }
+
+    .dish-title{
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+
+
+    .dish-price{
+        right: -33px;
+        font-size: 18px;
+        width: 60px;
+        height: 60px;
+    }
+    .dish-info{
+        padding: 0 30px 8px 30px;
+    }
+
+    .family-combos .dish-price{
+        font-size: 24px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .combo-products-list{
+        font-size: 14px;
+    }
+
+    .dish-image-background {
+        height: 180px;
+        border-radius: 20px;
+    }
+
+    .dish-image-background img {
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 10px;
+        width: 80%;
+    }
+    .beverages .dish-image-background:not(:last-child) img{
+        width: 47%;
+    }
+}
